@@ -1,4 +1,5 @@
 // Update calculations and add item to cart
+let total;
 function updateCalculationsAndAddItem(itemName, itemPriceId) {
   const totalElement = document.getElementById("total-price");
   const itemPriceElement = document.getElementById(itemPriceId);
@@ -8,7 +9,7 @@ function updateCalculationsAndAddItem(itemName, itemPriceId) {
   const PriceItem = parseFloat(itemPriceElement.innerText);
 
   //   calculate total
-  const total = totalTk + PriceItem;
+  total = totalTk + PriceItem;
   totalElement.innerText = total;
 
   // Add item to cart list
@@ -16,23 +17,6 @@ function updateCalculationsAndAddItem(itemName, itemPriceId) {
   const li = document.createElement("li");
   li.innerText = itemName;
   selectedItemsList.appendChild(li);
-
-  // discount calculation
-  document.getElementById("coupon-btn").addEventListener("click", function () {
-    console.log("hello");
-    const inputValue = document.getElementById("coupon");
-    const inputValueString = inputValue.value;
-    if (total >= 200) {
-      if (inputValueString === "SELL200") {
-        const cal = (20 * total) / 100;
-      }
-    }
-    const discount = document.getElementById("discount").innerText;
-    discount.innerText = cal;
-
-    const grandTotal = document.getElementById("total").innerText;
-    grandTotal.innerText = cal;
-  });
 }
 
 // Add event listeners to "Add to cart" buttons
@@ -69,6 +53,26 @@ document.getElementById("btn-cart6").addEventListener("click", function () {
   updateCalculationsAndAddItem(itemNameText, "tk6");
 });
 
-// You can add more event listeners for other "Add to cart" buttons if needed
+// discount calculation
+document.getElementById("coupon-btn").addEventListener("click", function () {
+  console.log(total);
+  const inputValue = document.getElementById("coupon");
 
-// Similar event listeners for other "Add to cart" buttons
+  const inputValueString = inputValue.value;
+
+  if (total >= 200 && inputValueString === "SELL200") {
+    let cal = (20 * total) / 100;
+
+    let discount = document.getElementById("discount");
+    discount.innerText = cal;
+
+    let grandTotal = document.getElementById("total");
+    grandTotal.innerText = total - cal;
+  } else {
+    alert("Invalid Coupon code!!!!");
+  }
+});
+// MAKE PURCHASE BUTTON
+function makePurchase() {
+  window.location.href = "index.html";
+}
