@@ -60,7 +60,7 @@
     <main>
       <!-- section 1 start-->
       <section>
-        <h1 class="text-3xl font-bold mt-12">Kitchenware</h1>
+        <h1 class="text-3xl font-bold mt-12 ml-4">Kitchenware</h1>
         <div class="grid lg:grid-cols-4 gap-7 mt-12">
           <!-- card 1 start-->
           <div class="bg-slate-50 py-5 px-5 rounded-lg">
@@ -97,8 +97,11 @@
                   class="mask mask-star-2 bg-orange-400"
                 />
               </div>
-              <h2 class="font-bold">K. Accessories</h2>
-              <p>39.00 TK</p>
+              <h2 id="name1" class="font-bold">K. Accessories</h2>
+              <p><span id="tk1">40.00</span> TK</p>
+              <button id="btn-cart1" class="bg-pink-500 px-6 py-2 text-white">
+                Add to cart
+              </button>
             </div>
           </div>
           <!-- card 2 start-->
@@ -136,8 +139,11 @@
                   class="mask mask-star-2 bg-orange-400"
                 />
               </div>
-              <h2 class="font-bold">K. Accessories</h2>
-              <p>39.00 TK</p>
+              <h2 id="name2" class="font-bold">Kitchen Accessories</h2>
+              <p><span id="tk2">25.00</span>TK</p>
+              <button id="btn-cart2" class="bg-pink-500 px-6 py-2 text-white">
+                Add to cart
+              </button>
             </div>
           </div>
           <!-- card 3 start-->
@@ -175,23 +181,210 @@
                   class="mask mask-star-2 bg-orange-400"
                 />
               </div>
-              <h2 class="font-bold">K. Accessories</h2>
-              <p>39.00 TK</p>
+              <h2 id="name3" class="font-bold">Home Cooker</h2>
+              <p><span id="tk3">49.00</span> TK</p>
+              <button id="btn-cart3" class="bg-pink-500 px-6 py-2 text-white">
+                Add to cart
+              </button>
             </div>
           </div>
 
-          <div class="">
-            <h1>Have coupon?</h1>
-            <input
-              id=""
-              type="text"
-              name=""
-              placeholder="Coupon code"
-            /><button>Apply</button>
+          <!-- for coupon -->
+          <div>
+            <h1 class="font-bold text-2xl">Have coupon?</h1>
+            <div class="bg-slate-50 px-2 py-6">
+              <input
+                id="coupon"
+                type="text"
+                name=""
+                placeholder="Coupon code"
+                class="w-2/3 items-center mt-4 px-3 py-3 border"
+              /><button id="coupon-btn" class="bg-pink-500 text-white px-4 py-3 rounded-lg">
+                Apply
+              </button>
+            </div>
+            <!-- for purchase -->
+
+            <section class="mt-6 bg-slate-50 px-7 py-6">
+              <div >
+                <ol id="selected-items" class="list-decimal pl-5"></ol>
+              </div>
+              <hr />
+              <div class="calculation">
+                <p class="font-bold">
+                  Total Price: <span id="total-price" class="font-normal"> 00</span> Tk
+                </p>
+                <p class="font-bold">
+                  Discount: <span id="discount" class="font-normal"> 00</span> Tk
+                </p>
+                <p class="font-bold">
+                  Total: <span id="total" class="font-normal"> 00</span> Tk
+                </p>
+                <hr />
+                <br />
+              
+      <!-- modal open -->
+      <!-- Open the modal using ID.showModal() method -->
+      <button class="bg-pink-500 text-white px-12 py-3 rounded-lg" onclick="my_modal_5.showModal()">Make Purchase</button>
+      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <form method="dialog" class="modal-box">
+          <img class="w-1/3 ml-40" src="images/congo.png" alt="">
+          <h3 class="font-bold text-lg text-center">Congratulations</h3>
+          <p class="py-4 text-center">Your Purchase the product</p>
+          <div class="modal-action">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn mr-40 bg-pink-500 text-white px-12 py-3 hover:text-black">Go Home</button>
+          </div>
+        </form>
+      </dialog>
+              </div>
+            </section>
+            <!--  -->
           </div>
         </div>
       </section>
       <!-- section 1 end -->
+
+      <!-- section 2 start-->
+      <section>
+        <h1 class="text-3xl font-bold mt-12 ml-4">Sportswear</h1>
+        <div class="grid lg:grid-cols-4 gap-7 mt-12">
+          <!-- card 4 start-->
+          <div class="bg-slate-50 py-5 px-5 rounded-lg">
+            <div class="bg-slate-200 rounded-lg">
+              <img class="py-16 px-24" src="images/prod4.png" alt="" />
+            </div>
+
+            <div class="text-center mt-6">
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+              <h2 id="name4" class="font-bold">Sports Back Cap</h2>
+              <p><span id="tk4">49.00</span> TK</p>
+              <button id="btn-cart4" class="bg-pink-500 px-6 py-2 text-white">
+                Add to cart
+              </button>
+            </div>
+          </div>
+          <!-- card 5 start-->
+          <div class="bg-slate-50 py-5 px-5 rounded-lg">
+            <div class="bg-slate-200 rounded-lg">
+              <img class="py-11 px-24" src="images/prod5.png" alt="" />
+            </div>
+
+            <div class="text-center mt-6">
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+              <h2 id="name5" class="font-bold">Full Jersey Set</h2>
+              <p><span id="tk5">69.00</span> TK</p>
+              <button id="btn-cart5" class="bg-pink-500 px-6 py-2 text-white">
+                Add to cart
+              </button>
+            </div>
+          </div>
+          <!-- card 6 start-->
+          <div class="bg-slate-50 py-5 px-5 rounded-lg">
+            <div class="bg-slate-200 rounded-lg">
+              <img class="py-11 px-24" src="images/prod6.png" alt="" />
+            </div>
+
+            <div class="text-center mt-6">
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+              <h2 id="name6" class="font-bold">Sports cates</h2>
+              <p><span id="tk6">159.00</span> TK</p>
+              <button id="btn-cart6" class="bg-pink-500 px-6 py-2 text-white">
+                Add to cart
+              </button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+      <!-- section 2 end -->
+
+
+     
     </main>
+
+    
+    <script src="js/main.js"></script>
   </body>
 </html>
