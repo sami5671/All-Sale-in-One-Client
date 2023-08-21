@@ -1,6 +1,21 @@
-// Update calculations and add item to cart
+// global declaration
 let total;
-function updateCalculationsAndAddItem(itemName, itemPriceId) {
+
+// disable and enable section for coupon button
+const couponButton = document.getElementById("coupon-btn");
+couponButton.disabled = true;
+
+function CouponButton() {
+  if (total >= 200) {
+    couponButton.disabled = false;
+  } else {
+    couponButton.disabled = true;
+  }
+}
+
+//  calculations and add item to cart
+
+function calculationsAndAddItem(itemName, itemPriceId) {
   const totalElement = document.getElementById("total-price");
   const itemPriceElement = document.getElementById(itemPriceId);
 
@@ -17,40 +32,42 @@ function updateCalculationsAndAddItem(itemName, itemPriceId) {
   const li = document.createElement("li");
   li.innerText = itemName;
   selectedItemsList.appendChild(li);
+
+  CouponButton();
 }
 
 // Add event listeners to "Add to cart" buttons
 document.getElementById("btn-cart1").addEventListener("click", function () {
   const itemName = document.getElementById("name1");
   const itemNameText = itemName.innerText;
-  updateCalculationsAndAddItem(itemNameText, "tk1");
+  calculationsAndAddItem(itemNameText, "tk1");
 });
 
 document.getElementById("btn-cart2").addEventListener("click", function () {
   const itemName = document.getElementById("name2");
   const itemNameText = itemName.innerText;
-  updateCalculationsAndAddItem(itemNameText, "tk2");
+  calculationsAndAddItem(itemNameText, "tk2");
 });
 
 document.getElementById("btn-cart3").addEventListener("click", function () {
   const itemName = document.getElementById("name3");
   const itemNameText = itemName.innerText;
-  updateCalculationsAndAddItem(itemNameText, "tk3");
+  calculationsAndAddItem(itemNameText, "tk3");
 });
 document.getElementById("btn-cart4").addEventListener("click", function () {
   const itemName = document.getElementById("name4");
   const itemNameText = itemName.innerText;
-  updateCalculationsAndAddItem(itemNameText, "tk4");
+  calculationsAndAddItem(itemNameText, "tk4");
 });
 document.getElementById("btn-cart5").addEventListener("click", function () {
   const itemName = document.getElementById("name5");
   const itemNameText = itemName.innerText;
-  updateCalculationsAndAddItem(itemNameText, "tk5");
+  calculationsAndAddItem(itemNameText, "tk5");
 });
 document.getElementById("btn-cart6").addEventListener("click", function () {
   const itemName = document.getElementById("name6");
   const itemNameText = itemName.innerText;
-  updateCalculationsAndAddItem(itemNameText, "tk6");
+  calculationsAndAddItem(itemNameText, "tk6");
 });
 
 // discount calculation

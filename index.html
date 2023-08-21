@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Summer Sale</title>
+    <link rel="shortcut icon" href="images/Summer 1.png" type="image/x-icon">
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css"
       rel="stylesheet"
@@ -224,16 +225,16 @@
                 <br />
               
       <!-- modal open -->
-      <!-- Open the modal using ID.showModal() method -->
-      <button class="bg-pink-500 text-white px-12 py-3 rounded-lg" onclick="my_modal_5.showModal()">Make Purchase</button>
-      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+      
+      <button class="bg-pink-500 text-white px-12 py-3 rounded-lg" onclick="my_modal_5.showModal()" id="makePurchase">Make Purchase</button>
+      <dialog id="my_modal_5" class="modal modal-middle sm:modal-middle">
         <form method="dialog" class="modal-box">
-          <img class="w-1/3 ml-40" src="images/congo.png" alt="">
+          <img class="w-1/3 ml-24 lg:ml-40" src="images/congo.png" alt="">
           <h3 class="font-bold text-lg text-center">Congratulations</h3>
           <p class="py-4 text-center">Your Purchase the product</p>
           <div class="modal-action">
-            <!-- if there is a button in form, it will close the modal -->
-            <button onclick="makePurchase()" class="btn mr-40 bg-pink-500 text-white px-12 py-3 hover:text-black">Go Home</button>
+          
+            <button onclick="makePurchase()" class="btn mr-10 lg:mr-40 bg-pink-500 text-white px-12 py-3 hover:text-black">Go Home</button>
           </div>
         </form>
       </dialog>
